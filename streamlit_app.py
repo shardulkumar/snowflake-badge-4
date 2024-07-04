@@ -16,10 +16,33 @@ def render_elements():
 
     # Set the dropdown with relevant data
     available_colors = session \
-        .table('ZENAS_ATHLEISURE_DB.PRODUCTS.CATALOG_FOR_WEBSITE') \
+        .table('catalog_for_website') \
         .select(col('color_or_style'))
     available_colors = available_colors.to_pandas()
-    st.selectbox("Pick a sweatsuit color or style:", available_colors)
+    selected_option = st.selectbox(
+        "Pick a sweatsuit color or style:",
+        available_colors
+    )
+
+    # Get image_link, size etc from catalog view
+    catalog_data = session.sql(
+        """
+        select
+              file_name
+            , file_url
+            , price
+            , size_list
+            , upsell_product_desc
+        from catalog_for_website
+        where color_or_style = '{selected_color}'
+        """.format(selected_color=selected_option)
+    ).to_pandas()
+
+    st.text(catalog_data)
+
+    # Render image
+    st.image(image='', width=400, caption='test caption')
+    st.markdown('**Price:** ' + price)
 
 
 main()
