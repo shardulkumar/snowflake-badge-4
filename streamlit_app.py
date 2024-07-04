@@ -24,22 +24,15 @@ def render_elements():
         available_colors
     )
 
-    # Get image_link, size etc from catalog view
-    # catalog_data = session.sql(
-    #     """
-    #     select
-    #           file_name
-    #         , file_url
-    #         , price
-    #         , size_list
-    #         , upsell_product_desc
-    #     from catalog_for_website
-    #     where color_or_style = '{selected_color}'
-    #     """.format(selected_color=selected_option)
-    # ).to_pandas()
-
+    catalog_column_list = [
+        'FILE_NAME',
+        'FILE_URL',
+        'PRICE',
+        'SIZE_LIST',
+        'UPSELL_PRODUCT_DESC'
+    ]
     prod_data = session.table('catalog_for_website') \
-        .select(['FILE_NAME', 'FILE_URL', 'PRICE', 'SIZE_LIST', 'UPSELL_PRODUCT_DESC']) \
+        .select(catalog_column_list) \
         .where(col('COLOR_OR_STYLE') == selected_option).to_pandas()
 
     file_url = prod_data['FILE_URL'].iloc[0]
