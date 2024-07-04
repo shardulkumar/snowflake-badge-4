@@ -22,8 +22,6 @@ def render_elements():
     available_colors = available_colors.to_pandas()
     st.selectbox("Pick a sweatsuit color or style:", available_colors)
 
-    return None
-
 
 if __name__ == '__main__':
     main()
