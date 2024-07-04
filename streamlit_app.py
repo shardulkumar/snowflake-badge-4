@@ -47,7 +47,7 @@ def render_elements():
     product_caption = "Our warm, comfortable, {color} sweatsuit!" \
         .format(color=selected_option)
 
-    st.write(file_url)
+    st.write(file_name)
 
     # Render image
     st.image(image=file_name, width=400, caption=product_caption)
