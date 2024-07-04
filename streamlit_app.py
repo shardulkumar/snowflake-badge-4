@@ -40,7 +40,7 @@ def render_elements():
 
     prod_data = session.table('catalog_for_website') \
         .select(['FILE_NAME', 'FILE_URL', 'PRICE', 'SIZE_LIST', 'UPSELL_PRODUCT_DESC']) \
-        .where(col('COLOR_OR_STYLE') == selected_option)
+        .where(col('COLOR_OR_STYLE') == selected_option).to_pandas()
 
     file_url = prod_data['FILE_URL'].iloc[0]
     price = '$' + str(prod_data['PRICE'].iloc[0]) + '0'
