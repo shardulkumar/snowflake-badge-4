@@ -50,7 +50,7 @@ def render_elements():
     image_path = r'inventory\{}'.format(file_name)
 
     # Render image
-    st.image(image=image_path, width=400, caption=product_caption)
+    # st.image(image=image_path, width=400, caption=product_caption)
     st.markdown('**Price:** ' + price)
     st.markdown('**Size List:** ' + size_list)
     st.markdown('**Consider:** ' + upsell)
