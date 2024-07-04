@@ -17,8 +17,7 @@ def render_elements():
     # Set the dropdown with relevant data
     available_colors = session \
         .table('catalog_for_website') \
-        .select(col('color_or_style'))
-    available_colors = available_colors.to_pandas()
+        .select(col('color_or_style')).to_pandas()
     selected_option = st.selectbox(
         "Pick a sweatsuit color or style:",
         available_colors
