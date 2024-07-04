@@ -38,7 +38,6 @@ def render_elements():
         """.format(selected_color=selected_option)
     ).to_pandas()
 
-    file_name = catalog_data['FILE_NAME'].iloc[0]
     file_url = catalog_data['FILE_URL'].iloc[0]
     price = '$' + str(catalog_data['PRICE'].iloc[0]) + '0'
     size_list = catalog_data['SIZE_LIST'].iloc[0]
@@ -46,8 +45,6 @@ def render_elements():
 
     product_caption = "Our warm, comfortable, {color} sweatsuit!" \
         .format(color=selected_option)
-
-    image_path = r'inventory\{}'.format(file_name)
 
     # Render image
     st.image(image=file_url, width=400, caption=product_caption)
