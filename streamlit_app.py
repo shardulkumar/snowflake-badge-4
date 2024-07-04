@@ -1,5 +1,4 @@
 import streamlit as st
-from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col
 
 
@@ -10,7 +9,7 @@ def main():
 
 def render_elements():
     # Get session
-    session = get_active_session()
+    session = st.connection("snowflake")
 
     # Render title
     st.title("Zena's Amazing Athleisure Catalog")
