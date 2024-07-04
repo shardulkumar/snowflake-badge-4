@@ -4,7 +4,6 @@ from snowflake.snowpark.functions import col
 
 def main():
     render_elements()
-    return None
 
 
 def render_elements():
