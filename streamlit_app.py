@@ -38,11 +38,11 @@ def render_elements():
         """.format(selected_color=selected_option)
     ).to_pandas()
 
-    file_name = catalog_data['file_name'].iloc[0]
-    file_url = catalog_data['file_url'].iloc[0]
-    price = '$' + str(catalog_data['price'].iloc[0]) + '0'
-    size_list = catalog_data['size_list'].iloc[0]
-    upsell = catalog_data['upsell_product_desc'].iloc[0]
+    file_name = catalog_data['FILE_NAME'].iloc[0]
+    file_url = catalog_data['FILE_URL'].iloc[0]
+    price = '$' + str(catalog_data['PRICE'].iloc[0]) + '0'
+    size_list = catalog_data['SIZE_LIST'].iloc[0]
+    upsell = catalog_data['UPSELL_PRODUCT_DESC'].iloc[0]
 
     product_caption = "Our warm, comfortable, {color} sweatsuit!" \
         .format(color=selected_option)
