@@ -9,7 +9,8 @@ def main():
 
 def render_elements():
     # Get session
-    session = st.connection("snowflake")
+    cnx = st.connection("snowflake")
+    session = cnx.session()
 
     # Render title
     st.title("Zena's Amazing Athleisure Catalog")
