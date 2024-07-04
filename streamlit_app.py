@@ -1,4 +1,4 @@
 import streamlit as st
 
-st.title("Zena's Amazing Athleisure App")
-st.text("test app")
+st.title("Zena's Amazing Athleisure Catalog")
+st.selectbox("Pick a sweatsuit color or style")
