@@ -23,5 +23,4 @@ def render_elements():
     st.selectbox("Pick a sweatsuit color or style:", available_colors)
 
 
-if __name__ == '__main__':
-    main()
+main()
