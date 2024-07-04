@@ -41,8 +41,8 @@ def render_elements():
     st.text(catalog_data)
 
     # Render image
-    st.image(image='', width=400, caption='test caption')
-    st.markdown('**Price:** ' + price)
+    # st.image(image='', width=400, caption='test caption')
+    # st.markdown('**Price:** ' + price)
 
 
 main()
